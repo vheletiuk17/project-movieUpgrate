@@ -1,0 +1,27 @@
+.conteiner_father {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    width: 100%;
+
+}
+
+.conteiner {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -500px;
+}
+p{
+    text-align: center;
+    font-size: 33px;
+    font-weight: 700;
+    margin-left: -15px;
+}
+
+body{
+
+}

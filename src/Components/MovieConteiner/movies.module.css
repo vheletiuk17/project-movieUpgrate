@@ -1,0 +1,18 @@
+body{
+    font-family: "Kanit", sans-serif;
+    margin: 0;
+}
+
+.father{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+p{
+    font-weight: 500;
+    margin-left: 70px;
+}
+.title{
+    font-size: 35px;
+}

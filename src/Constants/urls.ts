@@ -9,10 +9,12 @@ const urlImg = 'https://image.tmdb.org/t/p/w500'
 const urls = {
     movie:{
         base:movie,
-        imgUrl: urlImg
+        imgUrl: urlImg,
+        byId:(id:number):string => `/movie/${id}`
     },
     genre:{
         base:genres,
+        byId:(genreId:number):string => `/genre/${genreId}/movies`
     }
 
 }
