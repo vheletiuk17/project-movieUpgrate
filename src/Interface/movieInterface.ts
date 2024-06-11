@@ -13,6 +13,9 @@ export interface IMovie {
     video: boolean
     vote_average: string
     vote_count: number
+    release_date: number
+
+
 
 }
 

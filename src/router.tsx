@@ -4,19 +4,24 @@ import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayouts} from "./Layouts/MainLayouts";
 import {MoviesPage} from "./Pages/MoviesPage";
-import {RegPage} from "./Pages/RegPage";
 import {GenrePage} from "./Pages/GenrePage";
-import {HomePage} from "./Pages/c/HomePage";
+import {HomePage} from "./Pages/HomePage";
 import {DetailesPage} from "./Pages/DetailesPage";
+import {LoginPage} from "./Pages/LoginPage";
+import {RegisterPage} from "./Pages/RegisterPage";
+import {SearchPage} from "./Pages/SearchPage";
+
 
 const router  = createBrowserRouter([
     {path:'', element:<MainLayouts/>, children:[
             {index: true, element: <Navigate to={'home'}/>},
             {path:'home',element:<HomePage/>},
             {path: 'movie', element: <MoviesPage/>},
-            {path:'login', element:<RegPage/>},
+            {path:'login', element:<LoginPage/>},
             {path:'genre', element:<GenrePage/>},
-            {path:`movie/:id`, element:<DetailesPage/>}
+            {path:`movie/:id`, element:<DetailesPage/>},
+            {path:'register', element:<RegisterPage/>},
+            {path:'search', element:<SearchPage/>}
         ]}
 ])
 

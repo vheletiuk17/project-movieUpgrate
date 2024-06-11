@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1000px;
+    height: 850px;
     width: 100%;
+
 
 }
 
@@ -13,7 +14,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: -500px;
+    margin-top: -200px;
 }
 p{
     text-align: center;
@@ -23,5 +24,6 @@ p{
 }
 
 body{
-
+margin: 0;
+    box-sizing: border-box;
 }

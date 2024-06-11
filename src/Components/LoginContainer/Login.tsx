@@ -1,20 +1,29 @@
 import React, {} from 'react';
+import {NavLink} from "react-router-dom";
 
+import css from './login.module.css'
+import img from './icon_img/img.png'
+import facebook from'./icon_img/facebook.png'
+import google from "./icon_img/google.png";
+import github from "./icon_img/git.png";
+import lock from './icon_img/password.png'
+import user from './icon_img/user.png'
 
-import css from './reg.module.css'
-
-const Register = () => {
+const Login = () => {
 
 
     return (
         <div className={css.father_container}>
             <div className={css.conteiner_login}>
                 <p className={css.title}>WELCOME BACK!</p>
-                <p className={css.title_2}>Don’t have a account, Sign up</p>
+                <p className={css.title_2}>Don’t have a account, <NavLink className={css.dont_have_akk}
+                                                                          to={'/register'}>Sign up</NavLink></p>
                 <div className={css.form_login}>
                     <div className={css.email_conteiner}>
+                        <img className={css.icon} src={user} alt=""/>
                         <input className={css.email} type="text" placeholder='Enter your email'/>
                     </div>
+                    <img className={css.icon} src={lock} alt=""/>
                     <div className={css.password_conteiner}>
                         <input className={css.password} type="password" placeholder='Enter your password'/>
                     </div>
@@ -27,15 +36,21 @@ const Register = () => {
                 <div className={css.btn_container}>
                     <button className={css.btn}>Sing In</button>
                 </div>
+                <div>
+                    <b>or</b>
+                </div>
                 <div className={css.social_login}>
 
+                    <img className={css.logo} src={google} alt=""/>
+                    <img className={css.logo} src={github} alt=""/>
+                    <img className={css.logo} src={facebook} alt=""/>
                 </div>
-                
+
 
             </div>
-            <img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fparlament.ua%2Fru%2Fnews%2Fnetflix-suttevo-pidvishhila-czini-na-svoi-bazovi-ta-premialni-plani%2F&psig=AOvVaw2PKF1-RWS2x1oscbV-0eep&ust=1716029169594000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJjPjP7AlIYDFQAAAAAdAAAAABAE' alt=""/>
+            <img className={css.img} src={img} alt=""/>
         </div>
     )
 };
 
-export {Register};
+export {Login};

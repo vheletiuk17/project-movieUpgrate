@@ -1,4 +1,4 @@
-const baseURL = "https://api.themoviedb.org/3/";
+const baseURL = "https://api.themoviedb.org/3";
 
 const API_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMGJjMjcwMzQ5YzMzYTFkYzNmNjI5MWY4YzBlNDI0MiIsInN1YiI6IjY1NGE4ZDNjNmJlYWVhMDEyYzkwNDFlMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IFAapPvqyWaXZEMGaVgh3XF5GyAR_ftLR-iB6n0jU8E'
 
@@ -10,11 +10,13 @@ const urls = {
     movie:{
         base:movie,
         imgUrl: urlImg,
-        byId:(id:number):string => `/movie/${id}`
+        byId:(id:number):string => `/movie/${id}`,
+        searchMovies: (): string => `/search/keyword?query=`,
+        trends: (): string => `/trending/movie/week`
     },
     genre:{
         base:genres,
-        byId:(genreId:number):string => `/genre/${genreId}/movies`
+        byId:(genreId:number):string => `/movie/${genreId}`
     }
 
 }

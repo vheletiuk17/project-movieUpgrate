@@ -17,6 +17,7 @@ const Movie: FC<IProps> = ({movie}) => {
                 <NavLink to={`/movie/${id}`}><img className={css.poster} src={"https://image.tmdb.org/t/p/w300" + poster_path} alt="img"/></NavLink>
                 {original_title}
                 <div className={css.stars}><RatingStars value={+vote_average}/></div>
+
             </div>
 
     );

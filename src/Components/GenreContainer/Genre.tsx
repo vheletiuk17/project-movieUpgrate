@@ -13,7 +13,7 @@ const Genre: FC<IProps> = ({genre}) => {
 
         <div className={css.container_btn}>
             <button className={css.btn}>
-                <NavLink className={css.btn1} to={`${id}`}>{name}</NavLink>
+                <NavLink className={css.btn1} to={`${id}/movies`}>{name}</NavLink>
             </button>
         </div>
 

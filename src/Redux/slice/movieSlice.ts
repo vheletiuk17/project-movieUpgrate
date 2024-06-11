@@ -1,20 +1,20 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAction, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {IMovie, IMovies} from "../../Interface/movieInterface";
 import {movieService} from "../../Services/movieService";
 import {AxiosError} from "axios";
 
 interface IState{
-    movies: IMovie[]
-    page:  number
-    detailes:IMovie[],
-    id: number
+    movies: IMovie[] ,
+    page:  number | null,
+    detailes:IMovie | null,
+    total_pages:number | null
 }
 
 const initialState:IState ={
     movies: [],
     page: null,
-    detailes:[],
-    id: null
+    detailes:null,
+    total_pages:null
 }
 
 const getAll = createAsyncThunk<IMovies,{page:number }>(
@@ -55,16 +55,22 @@ const movieSlice = createSlice({
 
             })
             .addCase(getById.fulfilled, (state, action) =>{
-                state.id =action.payload
                 state.detailes =action.payload
             })
+            .addCase(setPage, (state, action) =>{
+                state.page= action.payload
+            })
 })
+const setPage =createAction<number>('movie/Slice/setPage')
+
+
 
 const {reducer: movieReducer, actions} = movieSlice;
 
 const movieActions = {
     getAll,
     getById,
+    setPage,
     ...actions
 }
 export {

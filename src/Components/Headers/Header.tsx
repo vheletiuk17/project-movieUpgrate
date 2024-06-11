@@ -4,6 +4,8 @@ import {NavLink} from "react-router-dom";
 
 
 const Header = () => {
+
+
     return (
         <div className={css.container}>
             <div className={css.logo_1}>MovieLand</div>
@@ -13,11 +15,11 @@ const Header = () => {
                 <NavLink to={'genre'} className={css.genres}>Genres</NavLink>|
                 <NavLink to={'search'} className={css.search}>Search</NavLink>|
             </div>
-             <div className={css.conteiner_authorization}>
+            <div className={css.conteiner_authorization}>
                 <NavLink to={'login'} className={css.login}>Login </NavLink>
                 /
                 <NavLink to={'register'} className={css.register}> Sing Up</NavLink>
-             </div>
+            </div>
 
         </div>
     );

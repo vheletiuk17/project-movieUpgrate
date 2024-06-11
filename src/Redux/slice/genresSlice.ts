@@ -6,7 +6,7 @@ import {AxiosError} from "axios";
 
 interface IState {
     genres:IGenre[]
-    page: number
+    page: number | null
     movies:IMovie[]
 }
 
@@ -29,11 +29,11 @@ const getAll=createAsyncThunk<IGenres,void>(
     }
 )
 
-const getById=createAsyncThunk<IMovies,{id:number,page:number}>(
+const getById=createAsyncThunk<IMovies,{genreId:number,page:number}>(
     'genreSlice/getById',
-    async ({id,page},{rejectWithValue})=>{
+    async ({genreId,page},{rejectWithValue})=>{
         try {
-            const {data}=await genresService.getById(id,page)
+            const {data}=await genresService.getById(genreId,page)
             return data
         }catch (e) {
             const error = e as AxiosError

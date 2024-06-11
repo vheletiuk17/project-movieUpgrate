@@ -2,17 +2,21 @@ import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../../Hooks/reduxHooks";
 import {movieActions} from "../../../Redux";
 import {Detaile} from "../Detaile";
+import {useParams} from "react-router";
 
 const Detailes = () => {
-    const {detailes,id } = useAppSelector(state => state.movie);
+    const {detailes } = useAppSelector(state => state.movie);
+    const {id} = useParams();
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(movieActions.getById({id}))
+        if (id) {
+            dispatch(movieActions.getById({id: +id}))
+        }
     }, [dispatch, id]);
     return (
         <div>
-            {detailes && detailes.map(detaile => <Detaile key={detaile.id} detaile={detaile}/>)}
+            {detailes && <Detaile key={detailes.id} detaile={detailes}/>}
         </div>
     );
 };

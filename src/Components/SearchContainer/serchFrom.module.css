@@ -1,0 +1,22 @@
+.search_place{
+    width: 400px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    padding-left: 50px;
+}
+.search_place::placeholder{
+font-weight: 900;
+}
+
+.icon{
+    position: absolute;
+    top: 79px;
+    left: 710px;
+    width: 40px;
+    height: 40px;
+    padding-top: 16px;
+    padding-left: 10px;
+    opacity: 0.8;
+
+}
